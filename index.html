@@ -3086,14 +3086,7 @@
                         " 0"
                     );
 
-                  existingLabel
-                    .append("text")
-                    .attr("class", "maturity-label-text")
-                    .attr("id", "existing-label-path-text")
-                    .append("textPath")
-                    .attr("xlink:href", "#existing-label-path")
-                    .attr("startOffset", "50%")
-                    .text("Existing");
+
 
                   var emergingLabel = chartSVG
                     .append("g")
@@ -3112,14 +3105,7 @@
                         " 0"
                     );
 
-                  emergingLabel
-                    .append("text")
-                    .attr("class", "maturity-label-text")
-                    .attr("id", "emerging-label-path-text")
-                    .append("textPath")
-                    .attr("xlink:href", "#emerging-label-path")
-                    .attr("startOffset", "50%")
-                    .text("Emerging");
+
 
                   count_by_year.forEach(function (d, i) {
                     this["year" + d.key + "LabelRadius"] = d.outer - 10;
@@ -3160,14 +3146,7 @@
                         " 0"
                     );
 
-                  distantLabel
-                    .append("text")
-                    .attr("class", "maturity-label-text")
-                    .attr("id", "distant-label-path-text")
-                    .append("textPath")
-                    .attr("xlink:href", "#distant-label-path")
-                    .attr("startOffset", "50%")
-                    .text("Distant");
+
 
                   maturity_list_elements = [
                     { name: "Existing", fn: existingLabel },
@@ -3181,6 +3160,15 @@
                   });
 
                   count_by_year.forEach(function (d) {
+                         d.fn
+                          .append("text")
+                          .attr("class", "year-label-text")
+                          .attr("id", "year-" + d.key + "-label-path-text")
+                          .append("textPath")
+                          .attr("xlink:href", "#year-" + d.key + "-label-path")
+                          .attr("startOffset", "50%")
+                          .text(d.key);
+
                     chartPieData.forEach(function (v) {
                       d3.select(
                         "#year-" +
