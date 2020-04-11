@@ -3377,7 +3377,11 @@
                     .enter()
                     .append("a")
                     .attr("xlink:href", function (d) {
-                      return formatURL(d.URL);
+                      if (d["Themes"] != "Physical Process Enhancement")  {
+                        return ""
+                      } else {
+                        return formatURL(d.URL);
+                      }
                     })
                     .attr("target", "_blank")
                     .append("circle")
@@ -3440,7 +3444,11 @@
                     .enter()
                     .append("a")
                     .attr("xlink:href", function (d) {
-                      return formatURL(d.URL);
+                      if (d["Themes"] != "Physical Process Enhancement")  {
+                        return ""
+                      } else {
+                        return formatURL(d.URL);
+                      }
                     })
                     .attr("target", "_blank")
                     .append("polygon")
@@ -3469,7 +3477,11 @@
                     .enter()
                     .append("a")
                     .attr("xlink:href", function (d) {
-                      return formatURL(d.URL);
+                      if (d["Themes"] != "Physical Process Enhancement")  {
+                        return ""
+                      } else {
+                        return formatURL(d.URL);
+                      }
                     })
                     .attr("target", "_blank")
                     .append("rect")
